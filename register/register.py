@@ -25,14 +25,14 @@ register_t6 = 0
 register_t7 = 0
 
 # 一時変数（保存）
-register_tmp_store_s0 = 0
-register_tmp_store_s1 = 0
-register_tmp_store_s2 = 0
-register_tmp_store_s3 = 0
-register_tmp_store_s4 = 0
-register_tmp_store_s5 = 0
-register_tmp_store_s6 = 0
-register_tmp_store_s7 = 0
+register_s0 = 0
+register_s1 = 0
+register_s2 = 0
+register_s3 = 0
+register_s4 = 0
+register_s5 = 0
+register_s6 = 0
+register_s7 = 0
 
 # 一時変数
 register_t8 = 0
