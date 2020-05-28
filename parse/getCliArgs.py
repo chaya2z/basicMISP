@@ -25,5 +25,4 @@ def args_parser():
                         action='store_true',
                         help='output machine language')
     # 引数を解析する
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
