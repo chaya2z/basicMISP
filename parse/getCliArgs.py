@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(
 # バージョン情報
 parser.add_argument('-v', '--version',
                     action='version',
-                    version='%(prog)s β',
+                    version='%(prog)s version: β',
                     help='output version information and exit')
 # 計算モード（デフォルト）
 parser.add_argument('-c', '--calc',
