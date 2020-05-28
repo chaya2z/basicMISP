@@ -1,5 +1,9 @@
+from parse import getCliArgs
+
+
 def main():
-    pass
+    args = getCliArgs.args_parser()
+    print(args)
 
 
 if __name__ == "__main__":
