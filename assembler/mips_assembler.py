@@ -1,6 +1,10 @@
 def mips_assembler(instructions_list):
     for s in instructions_list:
-        pass
+        bin_1 = instructions(s[0])
+        if bin_1[0] == "R":
+            register_bin = r_format_parser(s[1].strip(','), s[2].strip(','), s[3])
+            machine_lang = bin_1[1] + register_bin[1] + register_bin[2] + register_bin[0] + bin_1[2] + bin_1[3]
+        return machine_lang
 
 
 def instructions(opcode):
@@ -25,7 +29,3 @@ def convert_register_bin(register):
                       '$s2': 18, '$s3': 19, '$s4': 20, '$s5': 21, '$s6': 22, '$s7': 23, '$t8': 24, '$t9': 25, '$k0': 26,
                       '$k1': 27, '$gp': 28, '$sp': 29, '$fp': 30, '$ra': 31, }
     return registers_dict[register]
-
-
-# print(r_format_parser("$t0", "$s1", "$s2"))
-# print(instructions("add"))
