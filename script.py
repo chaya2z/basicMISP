@@ -1,5 +1,6 @@
 from parse import cli_args_parser
 from parse import asm_parser
+from assembler import mips_assembler
 
 
 def main():
@@ -7,6 +8,7 @@ def main():
     target_path = args.asm_file
     test = asm_parser.asm_parser(target_path)
     print(test)
+    print(mips_assembler.mips_assembler(test))
     calc_mode = args.calc
     machine_lang_mode = args.machine_lang
 
