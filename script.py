@@ -1,9 +1,12 @@
 from parse import cli_args_parser
+from parse import asm_parser
 
 
 def main():
     args = cli_args_parser.args_parser()
     target_path = args.asm_file
+    test = asm_parser.asm_parser(target_path)
+    print(test)
     calc_mode = args.calc
     machine_lang_mode = args.machine_lang
 
