@@ -3,12 +3,12 @@ def mips_assembler(instructions_list):
         bin_1 = instructions(s[0])
         if bin_1[0] == "R":
             register_bin = r_format_parser(s[1].strip(','), s[2].strip(','), s[3])
-            op = bin_1[1][2:].zfill(6)
-            rs = register_bin[1][2:].zfill(5)
-            rt = register_bin[2][2:].zfill(5)
-            rd = register_bin[0][2:].zfill(5)
-            shamt = bin_1[2][2:].zfill(5)
-            funct = bin_1[3][2:].zfill(6)
+            op = bin_1[1]
+            rs = register_bin[1]
+            rt = register_bin[2]
+            rd = register_bin[0]
+            shamt = bin_1[2]
+            funct = bin_1[3]
             machine_lang = '0b' + op + rs + rt + rd + shamt + funct
             return machine_lang
 
@@ -16,16 +16,16 @@ def mips_assembler(instructions_list):
 def instructions(opcode):
     if opcode == "add":
         instruction_format = "R"
-        op = bin(0)
-        shamt = bin(0)
-        funct = bin(32)
+        op = format(0, '06b')
+        shamt = format(0, '05b')
+        funct = format(32, '06b')
         return instruction_format, op, shamt, funct
 
 
 def r_format_parser(r1, r2, r3):
-    r1_bin = bin(convert_register_bin(r1))
-    r2_bin = bin(convert_register_bin(r2))
-    r3_bin = bin(convert_register_bin(r3))
+    r1_bin = format(convert_register_bin(r1), '05b')
+    r2_bin = format(convert_register_bin(r2), '05b')
+    r3_bin = format(convert_register_bin(r3), '05b')
     return r1_bin, r2_bin, r3_bin
 
 
