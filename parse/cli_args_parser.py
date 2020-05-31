@@ -5,10 +5,10 @@ def args_parser():
     # パーサの作成
     parser = argparse.ArgumentParser(
         description='Parse MIPS assembly',
-        usage='python3 %(prog)s [file] [options]')
+        usage='./%(prog)s [file] [options]')
     # ファイルパスの受取
     # nargs=1指定するとリスト型になるのでやめる
-    parser.add_argument('asm_file',
+    parser.add_argument('file',
                         type=argparse.FileType('r'),
                         help='path to target MIPS assembly file')
     # バージョン情報
