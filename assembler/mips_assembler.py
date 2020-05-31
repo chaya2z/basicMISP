@@ -3,7 +3,13 @@ def mips_assembler(instructions_list):
         bin_1 = instructions(s[0])
         if bin_1[0] == "R":
             register_bin = r_format_parser(s[1].strip(','), s[2].strip(','), s[3])
-            machine_lang = bin_1[1] + register_bin[1] + register_bin[2] + register_bin[0] + bin_1[2] + bin_1[3]
+            op = bin_1[1][2:].zfill(6)
+            rs = register_bin[1][2:].zfill(5)
+            rt = register_bin[2][2:].zfill(5)
+            rd = register_bin[0][2:].zfill(5)
+            shamt = bin_1[2][2:].zfill(5)
+            funct = bin_1[3][2:].zfill(6)
+            machine_lang = '0b' + op + rs + rt + rd + shamt + funct
             return machine_lang
 
 
