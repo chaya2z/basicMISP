@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 from parse import cli_args_parser
 from parse import asm_parser
 from assembler import mips_assembler
